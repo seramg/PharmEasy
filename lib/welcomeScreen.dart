@@ -18,7 +18,8 @@ class WelcomeScreen extends StatelessWidget {
 
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children:  [
 
@@ -26,10 +27,10 @@ class WelcomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const[
 
-                     Text(
+                    Text(
                      "Welcome to ",
                       style:  TextStyle(
-                       fontSize: 35,
+                       fontSize: 30,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Roboto",
                       ),
@@ -37,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                     Text(
                       "Pharm",
                       style:  TextStyle(
-                        fontSize: 35,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Roboto",
                         color: Color(0xFF7D97F3)
@@ -46,7 +47,7 @@ class WelcomeScreen extends StatelessWidget {
                     Text(
                       "Easy",
                       style:  TextStyle(
-                          fontSize: 35,
+                          fontSize: 30,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Roboto",
                           color: Color(0xFFFEBBBA)
@@ -54,8 +55,9 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+
                Padding(
-                 padding: const EdgeInsets.all(24.0),
+                 padding: const EdgeInsets.all(16.0),
                  child: Center(
                      child: Image.asset("assets/images/img1.png")
                  ),
@@ -71,10 +73,7 @@ class WelcomeScreen extends StatelessWidget {
                      ],
                    ),
                  ),
-                Padding(
-                  padding: const EdgeInsets.only(top:8.0),
-                  child: Button(btntxt:"Register"),
-                )
+                Button(btntxt:"Register")
               ],
             ),
           ),

@@ -20,30 +20,39 @@ class Field extends StatelessWidget {
             text,
             style:  const TextStyle(
               fontSize: 20,
+
               fontWeight: FontWeight.bold,
               fontFamily: "Roboto",
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      color: Colors.blue,
-                      width: 2.0
+            child:  SizedBox(
+              height: 40,
+              child: TextField(
+                  style: const TextStyle(
+                    fontSize: 15,
+
                   ),
-                  borderRadius: BorderRadius.circular(10.0)
-              ),
 
+                  decoration: InputDecoration(
 
-              child: const TextField(
-                decoration: InputDecoration(
-                    border: InputBorder.none
+                    fillColor: Colors.white,
+                      border:  OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.grey,width: 2.0),
+                          borderRadius:  BorderRadius.circular(10.0),
+
+                      ),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFF7D97F3),width: 2.0),
+                      borderRadius:  BorderRadius.circular(10.0)
+                    )
+                  ),
                 ),
-              ),
             ),
-          )
+            ),
+
         ],
       ),
     );
