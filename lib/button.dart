@@ -2,9 +2,10 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  String btntxt;
-   Button({
-    Key? key, required this.btntxt
+ final Function onClick;
+  final String btntxt;
+   const Button({
+    Key? key, required this.btntxt,required this.onClick
   }) : super(key: key);
 
   @override
@@ -13,7 +14,9 @@ class Button extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
 
-        onPressed: () {},
+        onPressed: () {
+          onClick();
+        },
         child:  Text(
          btntxt.toUpperCase(),
           style: const TextStyle(
