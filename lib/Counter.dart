@@ -32,13 +32,13 @@ class _CounterState extends State<Counter> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-      //cartButton(sign: '-',),
+       cartButton(sign: '-',operation:decrement),
 
         Text(
           quantity.toString(),
         ),
 
-        //const cartButton(sign: '+',),
+        cartButton(sign: '+',operation:increment),
 
       ],
     );
