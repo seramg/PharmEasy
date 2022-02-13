@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
- final Function onClick;
+ final Function? onClick;
   final String btntxt;
    const Button({
     Key? key, required this.btntxt,required this.onClick
@@ -15,7 +15,7 @@ class Button extends StatelessWidget {
       child: ElevatedButton(
 
         onPressed: () {
-          onClick();
+          //onClick();
         },
         child:  Text(
          btntxt.toUpperCase(),
