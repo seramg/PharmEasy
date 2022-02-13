@@ -4,6 +4,7 @@ import 'package:pharmeasy/verify.dart';
 import 'package:pharmeasy/welcomeScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'home.dart';
 
 
 void main() async {
@@ -27,9 +28,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
 
-      home: Scaffold(body: WelcomeScreen()),
+      home: Scaffold(body: Home()),
     );
   }
 }

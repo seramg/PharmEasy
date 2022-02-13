@@ -38,6 +38,7 @@ dependencies:
   cloud_firestore: ^3.1.8
   json_annotation: ^4.4.0
   firebase_auth: ^3.3.7
+  google_sign_in: ^5.0.4
 
 dev_dependencies:
   json_serializable: ^6.1.4

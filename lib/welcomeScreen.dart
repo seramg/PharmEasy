@@ -45,80 +45,82 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        "Welcome to ",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Roboto",
-                        ),
-                      ),
-                      Text(
-                        "Pharm",
-                        style: TextStyle(
+  Widget build(BuildContext context) => Scaffold(
+    body: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "Welcome to ",
+                          style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                             fontFamily: "Roboto",
-                            color: Color(0xFF7D97F3)),
-                      ),
-                      Text(
-                        "Easy",
-                        style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Roboto",
-                            color: Color(0xFFFEBBBA)),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Center(child: Image.asset("assets/images/img1.png")),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      children: [
-                        Field(
-                          text: "Name",
-                          controller: nameController,
+                          ),
                         ),
-                        Field(
-                          text: "Email ID",
-                          controller: emailIdController,
+                        Text(
+                          "Pharm",
+                          style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Roboto",
+                              color: Color(0xFF7D97F3)),
                         ),
-                        Field(
-                          text: "Phone No:",
-                          controller: phoneNoController,
-                        ),
-                        Field(
-                          text: "Medical Store",
-                          controller: medStoreController,
+                        Text(
+                          "Easy",
+                          style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Roboto",
+                              color: Color(0xFFFEBBBA)),
                         ),
                       ],
                     ),
-                  ),
-                  Button(
-                      btntxt: "Register",
-                      onClick: onClick,
-                      phoneNo: phoneNoController)
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Center(child: Image.asset("assets/images/img1.png")),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          Field(
+                            text: "Name",
+                            controller: nameController,
+                          ),
+                          Field(
+                            text: "Email ID",
+                            controller: emailIdController,
+                          ),
+                          Field(
+                            text: "Phone No:",
+                            controller: phoneNoController,
+                          ),
+                          Field(
+                            text: "Medical Store",
+                            controller: medStoreController,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Button(
+                        btntxt: "Register",
+                        onClick: onClick,
+                        phoneNo: phoneNoController)
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      );
+  );
 }

@@ -3,10 +3,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmeasy/button.dart';
 
-class Verify extends StatelessWidget {
-  final TextEditingController? phone;
-  const Verify({Key? key, this.phone}) : super(key: key);
+class Verify extends StatefulWidget {
 
+  final TextEditingController? phone;
+
+   Verify({Key? key, this.phone}) : super(key: key);
+
+  @override
+  State<Verify> createState() => _VerifyState();
+}
+
+class _VerifyState extends State<Verify> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  TextEditingController otpCode = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +33,7 @@ class Verify extends StatelessWidget {
                 const Center(child: Text('Verify Yourself',style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),)),
                 const Center(child: Text('We have sent a One Time Password to your regisetered mobile number.',
                     style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal),textAlign:  TextAlign.center)),
-                Center(child: Text(phone!.text,
+                Center(child: Text(widget.phone!.text,
                     style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),textAlign:  TextAlign.center)),
                 Center(
                   child: Container(
