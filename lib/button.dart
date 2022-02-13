@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:pharmeasy/verify.dart';
 
 class Button extends StatelessWidget {
- final Function onClick;
+ final TextEditingController? phoneNo;
+ final Function? onClick;
   final String btntxt;
    const Button({
-    Key? key, required this.btntxt,required this.onClick
+    Key? key, required this.btntxt, this.onClick,this.phoneNo
   }) : super(key: key);
 
   @override
@@ -15,7 +17,11 @@ class Button extends StatelessWidget {
       child: ElevatedButton(
 
         onPressed: () {
-          onClick();
+          onClick!();
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>  Verify(phone:phoneNo!)),
+          );
         },
         child:  Text(
          btntxt.toUpperCase(),
