@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmeasy/button.dart';
+import 'package:pharmeasy/home/home.dart';
 
 class Verify extends StatefulWidget {
 
@@ -78,7 +79,14 @@ class _VerifyState extends State<Verify> {
                     ),
                   ),
                 ),
-                const Button(btntxt: 'SUBMIT')
+                 Button(btntxt: 'SUBMIT',
+                  onClick:() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Home()),
+                  );
+                },)
               ],
             ),
           ),

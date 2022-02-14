@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:pharmeasy/cart_page/CartPage.dart';
 import 'package:pharmeasy/verify.dart';
 import 'package:pharmeasy/welcomeScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'home.dart';
+import 'home/home.dart';
 
 
 void main() async {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
 
-      home: Scaffold(body: Home()),
+      home: Scaffold(body: WelcomeScreen()),
     );
   }
 }

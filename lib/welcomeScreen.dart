@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pharmeasy/models/medicalstore.dart';
+import 'package:pharmeasy/verify.dart';
 
 import 'Field.dart';
 import 'button.dart';
@@ -42,6 +43,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         email: emailIdController.text,
         medStore: medStore);
     await Collections.usersRef.doc(user.id).set(user);
+
   }
 
   @override
@@ -114,8 +116,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     Button(
                         btntxt: "Register",
-                        onClick: onClick,
-                        phoneNo: phoneNoController)
+                        onClick: (){
+                          onClick();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>  Verify(phone:phoneNoController)),
+                          );
+                        }
+                      )
                   ],
                 ),
               ),
