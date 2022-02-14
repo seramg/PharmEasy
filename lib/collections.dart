@@ -38,11 +38,11 @@ class Collections {
     fromFirestore: (snapshot, _) => Medicines.fromJson(snapshot.data()!),
     toFirestore: (medicines, _) => medicines.toJson(),
   );
-// static final medicinesShortRef =
-//   FirebaseFirestore.instance.collection(Collections.medicinesShort).withConverter(
-//     fromFirestore: (snapshot, _) => MedicinesShort.fromJson(snapshot.data()!),
-//     toFirestore: (medicinesShort, _) => medicinesShort.toJson(),
-//   );
+static final medicinesShortRef =
+  FirebaseFirestore.instance.collection(Collections.medicinesShort).withConverter(
+    fromFirestore: (snapshot, _) => MedicinesShort.fromJson(snapshot.data()!),
+    toFirestore: (medicinesShort, _) => medicinesShort.toJson(),
+  );
 
 
 }

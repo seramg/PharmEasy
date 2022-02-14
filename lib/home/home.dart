@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:pharmeasy/cart_page/CartPage.dart';
 import 'package:pharmeasy/cart_page/components/Counter.dart';
 import 'package:pharmeasy/cart_page/components/ItemRow.dart';
+import 'package:pharmeasy/collections.dart';
+import 'package:pharmeasy/models/medicines.dart';
 import 'package:pharmeasy/models/requests.dart';
-import 'package:pharmeasy/popup.dart';
+
 import 'package:pharmeasy/home/request.dart';
 import 'package:pharmeasy/home/stock/stock.dart';
 import 'package:pharmeasy/home/stock/stock_empty.dart';
@@ -31,6 +33,7 @@ class _HomeState extends State<Home> {
   final List<double> price=<double>[];
   void addItemToList(){
     setState(() {
+
       medicinesnames.insert(0,medicineController.text);
       stockCount.insert(0, int.parse(stockController.text));
       price.insert(0, double.parse(priceController.text));
@@ -62,9 +65,9 @@ class _HomeState extends State<Home> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                       Text(
                         "Hi Jomi",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Roboto",
