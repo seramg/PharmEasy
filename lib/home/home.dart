@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:pharmeasy/cart_page/CartPage.dart';
 import 'package:pharmeasy/cart_page/components/Counter.dart';
 import 'package:pharmeasy/cart_page/components/ItemRow.dart';
-import 'package:pharmeasy/collections.dart';
 import 'package:pharmeasy/models/medicines.dart';
 import 'package:pharmeasy/models/requests.dart';
 
@@ -12,6 +11,7 @@ import 'package:pharmeasy/home/stock/stock.dart';
 import 'package:pharmeasy/home/stock/stock_empty.dart';
 import 'package:pharmeasy/home/stock/stock_notempty.dart';
 
+import '../collections.dart';
 import 'home_row.dart';
 
 // ignore: must_be_immutable, prefer_const_constructors, prefer_const_constructors
@@ -32,8 +32,9 @@ class _HomeState extends State<Home> {
   final List<int> stockCount=<int>[];
   final List<double> price=<double>[];
   void addItemToList(){
-    setState(() {
-
+    setState(() async {
+      Medicines med=Medicines(id: medicineController.text, name: medicineController.text, qty: int.parse(stockController.text), maxqty: 100, price: double.parse(priceController.text));
+      await Collections.medicinesRef.doc(med.id).set(med);
       medicinesnames.insert(0,medicineController.text);
       stockCount.insert(0, int.parse(stockController.text));
       price.insert(0, double.parse(priceController.text));
@@ -65,9 +66,9 @@ class _HomeState extends State<Home> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                       Text(
+                      const Text(
                         "Hi Jomi",
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Roboto",
@@ -171,7 +172,7 @@ class _HomeState extends State<Home> {
           showDialog(
             context: context,
             builder: (ctx) => AlertDialog(
-              title: Text("Alert Dialog Box",style: TextStyle(fontSize: 25),),
+              title: const Text("Alert Dialog Box",style: TextStyle(fontSize: 25),),
               content:Container(
                 height: 500,
                 child: Column(
