@@ -19,6 +19,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+
   TextEditingController nameController = TextEditingController();
 
   TextEditingController emailIdController = TextEditingController();

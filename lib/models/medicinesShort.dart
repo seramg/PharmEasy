@@ -6,14 +6,14 @@ part 'medicinesShort.g.dart';
 @JsonSerializable(explicitToJson: true)
 class MedicinesShort {
    String? id;
-  final String? name;
-  final int? qty;
+  final String name;
+  final int qty;
   final double? price;
 
   MedicinesShort({
      this.id,
-     this.name,
-     this.qty,
+   required  this.name,
+  required   this.qty,
      this.price
 
   });

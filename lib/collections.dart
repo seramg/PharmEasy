@@ -11,7 +11,7 @@ class Collections {
   static const String orders = 'orders';
   static const String medicalStore = 'medicalStore';
   static const String medicines = 'medicines';
-  // static const String medicinesShort = 'medicinesShort';
+  static const String medicinesShort = 'medicinesShort';
 
   static final usersRef =
   FirebaseFirestore.instance.collection(Collections.users).withConverter(

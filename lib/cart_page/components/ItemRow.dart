@@ -6,8 +6,9 @@ import 'Counter.dart';
 
 class ItemRow extends StatelessWidget {
   final String medicineName;
+  final double price;
   const ItemRow({
-    Key? key,required this.medicineName
+    Key? key,required this.medicineName,required this.price
   }) : super(key: key);
 
   @override
@@ -25,8 +26,8 @@ class ItemRow extends StatelessWidget {
 
         Row(
           children: [
-            Counter(),
-            Text('₹42'),
+             // Counter( initQuantity: ),
+            Text(price.toString()),
           ],
         ),
 

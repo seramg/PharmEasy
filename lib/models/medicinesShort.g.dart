@@ -9,8 +9,8 @@ part of 'medicinesShort.dart';
 MedicinesShort _$MedicinesShortFromJson(Map<String, dynamic> json) =>
     MedicinesShort(
       id: json['id'] as String?,
-      name: json['name'] as String?,
-      qty: json['qty'] as int?,
+      name: json['name'] as String,
+      qty: json['qty'] as int,
       price: (json['price'] as num?)?.toDouble(),
     );
 

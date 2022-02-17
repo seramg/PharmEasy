@@ -7,18 +7,15 @@ part 'orders.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Orders {
-  final String? id;
-  final String? customer;
-  final DateTime? date;
-  final List<MedicinesShort> ? med;
+   String? id;
+  final List<MedicinesShort>  med;
   final double? total;
 
   Orders({
-    required this.id,
-    required this.customer,
-    required this.date,
-    required this.med,
-    required this.total
+     this.id,
+
+  required   this.med,
+     this.total
 
   });
 
