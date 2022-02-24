@@ -21,7 +21,7 @@ void main() async {
   // });
   final docs = await firestore.collection("Users").where("name",isEqualTo: "sera").get();
   final data= docs.docs[0].data();
-  print(data);
+  // print(data);
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
 
-      home: Scaffold(body: WelcomeScreen()),
+      home: Scaffold(body: Home()),
     );
   }
 }

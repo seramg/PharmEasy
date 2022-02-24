@@ -110,46 +110,49 @@ class _HomeState extends State<Home> {
                       )
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Center(
-                          child: Container(
-                            width: 300,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: const Color(0xFF7D97F3),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Center(
+                            child: Container(
+                              width: 300,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: const Color(0xFF7D97F3),
+                                  ),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Center(
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      prefixIcon: const Icon(Icons.search),
+                                      suffixIcon: IconButton(
+                                        icon: const Icon(Icons.clear),
+                                        onPressed: () {
+                                          /* Clear the search field */
+                                        },
+                                      ),
+                                      hintText: 'Search...',
+                                      border: InputBorder.none),
                                 ),
-                                borderRadius: BorderRadius.circular(5)),
-                            child: Center(
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    prefixIcon: const Icon(Icons.search),
-                                    suffixIcon: IconButton(
-                                      icon: const Icon(Icons.clear),
-                                      onPressed: () {
-                                        /* Clear the search field */
-                                      },
-                                    ),
-                                    hintText: 'Search...',
-                                    border: InputBorder.none),
                               ),
                             ),
                           ),
-                        ),
-                       IconButton(
-                           onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>CartPage()
-                                      ),
-                              );
-                            }, icon: Icon(Icons.add_shopping_cart,color:Color(0xFFFF8080)))
-                      ],
+                         IconButton(
+                             onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>CartPage()
+                                        ),
+                                );
+                              }, icon: Icon(Icons.add_shopping_cart,color:Color(0xFFFF8080)))
+                        ],
+                      ),
                     ),
                   ),
 

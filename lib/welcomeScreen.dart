@@ -29,6 +29,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   TextEditingController medStoreController = TextEditingController();
   void onClick() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference order = firestore.collection('orders');
+    order.doc().delete();
+    CollectionReference medshort = firestore.collection('orders');
+    medshort.doc().delete();
     // MedicalStore medStore= MedicalStore(id: id, name: name)
     // User user = User(id: id, name: nameController.text, phone: phoneNoController.text, email: emailIdController.text, medStore: medStoreController.text)
     // var x= await firestore.collection("MedicalStore").add(medStore.toJson());

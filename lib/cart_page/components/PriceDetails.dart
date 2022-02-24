@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 
 class PriceDetails extends StatelessWidget {
   final String priceValueCategory;
+  final double total;
   const PriceDetails({
-    Key? key,required this.priceValueCategory
+    Key? key,required this.priceValueCategory, required this.total,
   }) : super(key: key);
 
   @override
@@ -12,7 +13,7 @@ class PriceDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         priceValueCategory=='To Pay'?Text(priceValueCategory,style: const TextStyle(fontWeight: FontWeight.bold) ,):Text(priceValueCategory),
-        priceValueCategory=='To Pay'?const Text('₹42',style: TextStyle(fontWeight: FontWeight.bold) ,):const Text('₹42'),
+        priceValueCategory=='To Pay'? Text(total.toString(),style: TextStyle(fontWeight: FontWeight.bold) ,): Text(total.toString()),
       ],
     );//₹
   }

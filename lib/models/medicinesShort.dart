@@ -8,13 +8,13 @@ class MedicinesShort {
    String? id;
   final String name;
   final int qty;
-  final double? price;
+  final double price;
 
   MedicinesShort({
      this.id,
    required  this.name,
   required   this.qty,
-     this.price
+     required this.price
 
   });
 
