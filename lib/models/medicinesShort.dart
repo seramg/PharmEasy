@@ -8,6 +8,7 @@ class MedicinesShort {
    String? id;
   final String name;
   final int qty;
+
   final double price;
 
   MedicinesShort({

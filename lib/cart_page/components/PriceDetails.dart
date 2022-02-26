@@ -12,8 +12,8 @@ class PriceDetails extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        priceValueCategory=='To Pay'?Text(priceValueCategory,style: const TextStyle(fontWeight: FontWeight.bold) ,):Text(priceValueCategory),
-        priceValueCategory=='To Pay'? Text(total.toString(),style: TextStyle(fontWeight: FontWeight.bold) ,): Text(total.toString()),
+        priceValueCategory=='To Pay'?Text(priceValueCategory,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 30) ,):Text(priceValueCategory),
+        priceValueCategory=='To Pay'? Text(total.toString(),style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30) ,): Text(total.toString()),
       ],
     );//₹
   }

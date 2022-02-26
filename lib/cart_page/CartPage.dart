@@ -28,32 +28,7 @@ class _CartPageState extends State<CartPage> {
   List<MedicinesShort> medshortlist = [];
   double total = 0;
 
-  List<MedicinesShort> orders_get() {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-    total = 0;
-    firestore
-        .collection('medicinesShort')
-        .get()
-        .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        // medshortlist.add(doc.data());
-        //   print(doc.data());
-        //   doc.data().
-        MedicinesShort medicinesShort =
-            MedicinesShort.fromJson(doc.data() as Map<String, dynamic>);
-        medshortlist.add(medicinesShort);
-        total += (medicinesShort.price) * (medicinesShort.qty.toDouble());
-      });
-    });
-
-    Orders order =
-        Orders(med: medshortlist, total: total, id: medshortlist[0].name);
-    Collections.ordersRef.doc(order.id).set(order);
-    print(total);
-    print(medshortlist);
-    return medshortlist;
-  }
 
   Future<List<MedicinesShort>> orders_get1() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -126,17 +101,15 @@ class _CartPageState extends State<CartPage> {
                       ),
                       PriceDetails(
                           priceValueCategory: 'Item Total', total: total),
-                      const PriceDetails(
-                        priceValueCategory: 'Discount',
-                        total: 0,
-                      ),
-                      const PriceDetails(
+
+                       PriceDetails(
                         priceValueCategory: 'To Pay',
-                        total: 0,
+                        total: total,
                       ),
                       Button(
                         btntxt: "Checkout",
                         onClick: () {
+
                           Navigator.pop(context);
                         },
                       )

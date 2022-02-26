@@ -15,13 +15,13 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  // firestore.collection("Users").add({
-  //   "name": "sera",
-  //   "phoneno":"1234"
-  // });
+  firestore.collection("Users").add({
+    "name": "sera",
+    "phoneno":"1234"
+  });
   final docs = await firestore.collection("Users").where("name",isEqualTo: "sera").get();
   final data= docs.docs[0].data();
-  // print(data);
+  print(data);
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
 
-      home: Scaffold(body: Home()),
+      home: Scaffold(body: WelcomeScreen()),
     );
   }
 }
